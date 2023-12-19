@@ -1,19 +1,21 @@
-# torrent_info.py
-
 class TorrentInfo:
-    def __init__(self, save_path,):
-        self._path = save_path
-        self._info = save_path  # Assuming lt has a method torrent_info to get info
+    def __init__(self, path, libtorrent):
+        self._path = path
+        self._lt = libtorrent
+        self._info = self._lt.torrent_info(./Downloads)
 
     def show_info(self):
-        print("Torrent Information:")
-        print(f"Path: {self._path}")
-        print(f"Info: {self._info}")
+        pass
 
-# Example usage
-if __name__ == "__main__":  # Fixed name == "main" to __name__ == "__main__"
-    # Assuming lt is an instance of a Torrent object (which needs to be defined or imported)
-    lt = Torrent()  # Create or obtain the Torrent object
-    save_path = "path/to/torrent/file.torrent"
-    torrent = TorrentInfo(save_path)
-    torrent.show_info()
+    def create_torrent_info(self):
+        self._info = self._lt.torrent_info(self._path)
+        return self._info
+
+    def __str__(self):
+        pass
+
+    def __repr__(self):
+        pass
+
+    def __call__(self):
+        return self.create_torrent_info()
