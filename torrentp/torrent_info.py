@@ -1,7 +1,7 @@
 class TorrentInfo:
-    def __init__(self, path, libtorrent):
+    def __init__(self, file_path, save_path):
         self._path = save_path
-        self._lt = libtorrent
+        self._lt = lt
         self._info = self._lt.torrent_info(self._path)
 
     def show_info(self):
