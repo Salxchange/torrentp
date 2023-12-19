@@ -2,7 +2,7 @@ class TorrentInfo:
     def __init__(self, file_path, save_path):
         self._path = save_path
         self._lt = lt
-        self._info = self._lt.torrent_info(self._path)
+        self._info = self._lt.torrent_info(save_path)
 
     def show_info(self):
         # Implement the logic to display torrent information here
